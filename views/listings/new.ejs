@@ -1,0 +1,66 @@
+<% layout("/layouts/boilerplate")%>
+<div class="row">
+    <div class="col-8 offset-2" >  
+         <!-- form occupies only 8 col and lies in mid-->
+    <h3>Create new StayScape</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div >
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" placeholder="Add a catchy title" type="text" class="form-control" required/>
+            <div class="valid-feedback">looks good!</div>
+        </div>
+        <br/> <br/>
+        <div >
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" required></textarea>
+        </div>
+            <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+
+        <select name="listing[category]" class="form-control" required>
+            <option value="">Select Category</option>
+            <option value="Trending">Trending</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Iconic Cities">Iconic Cities</option>
+            <option value="Castles">Castles</option>
+            <option value="Amazing Pools">Amazing Pools</option>
+            <option value="Camping">Camping</option>
+            <option value="Farms">Farms</option>
+            <option value="Arctic">Arctic</option>
+        </select>
+    </div>
+        <!-- <br/> <br/>
+        <div >
+            <label for="image" class="form-label">Image Link</label>
+            <input name="listing[image]" placeholder = "Enter image URL/Link" type="text" class="form-control" required/>
+        </div> -->
+        <br/> <br/>
+        <div >
+            <label for="image" class="form-label">Upload Image</label>
+            <input name="listing[image]" type="file" class="form-control" required/>
+        </div>
+        <br/> <br/>
+        <div class="row"><!--till mid price and and country will be in one row-->
+            <div class="col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" placeholder="2,000" type="number" class="form-control" required/>
+            <div class="invalid-feedback">Enter valid price!</div>
+        </div>
+        <div class="col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" placeholder="India" type="text" class="form-control" required/>
+            <div class="invalid-feedback">Enter valid country name!</div>
+        </div>
+        </div>
+        <br/> <br/>
+        <div >
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]" placeholder="Jaipur" type="text" class="form-control" required/>
+            <div class="invalid-feedback">Enter valid location!</div>
+        </div>
+        <br/> <br/>
+        <button class="btn btn-dark add-btn">Add</button>
+        <br/> <br/>
+    </form>
+    </div>
+</div>
