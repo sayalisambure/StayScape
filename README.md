@@ -108,7 +108,7 @@ StayScape/
 
 - **User**: `username`, `email`, hashed password (via `passport-local-mongoose`)
 - **Listing**: `title`, `description`, `image {url, filename}`, `price`, `location`, `country`, `category`, `geometry (GeoJSON Point)`, `owner → User`, `reviews → [Review]`
-- **Review**: `comment`, `rating (1–5)`, `createdAt`, `author → User`
+- **Review**: `comment`, `rating (1–5)`, `author → User`
 
 ### Routes
 
@@ -158,13 +158,6 @@ CLOUD_NAME=your_cloudinary_cloud_name
 CLOUD_API_KEY=your_cloudinary_api_key
 CLOUD_API_SECRET=your_cloudinary_api_secret
 ```
-
-| Variable | Purpose |
-|---|---|
-| `ATLASDB_URL` | MongoDB connection string (local: `mongodb://127.0.0.1:27017/StayScape`) |
-| `SECRET` | Signs the session cookie and encrypts stored sessions |
-| `MAP_TOKEN` | Mapbox **public** token (`pk.…`) for geocoding and the map |
-| `CLOUD_NAME`, `CLOUD_API_KEY`, `CLOUD_API_SECRET` | Cloudinary credentials for image uploads |
 
 ### Run
 
@@ -216,7 +209,6 @@ node init/index.js
 - **Separation of concerns:** refactored routes into controllers, middleware and utilities to keep the code maintainable.
 
 ---
-
 
 
 ## 👩‍💻 Author
